@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+
+  <title>Blog</title>
+</head>
+
+<body> <!-- Header -->
+  <header class="site-header">
+    <h1>My Blog</h1>
+    <nav> <a href="bloghome.html">Home</a> <a href="about.html">About</a> <a href="blog.html" class="active">Blog</a> </nav>
+  </header> <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to the Blog</h2>
+    <p>Read the latest articles, tips, and stories below.</p>
+  </section> <!-- Blog Posts -->
+  <main class="blog-container">
+    <article class="post">  <img 
+      src="{% static 'images/django-img.jpg' %}"
+      alt="django"
+     
+      />
+      <h3>First Blog Post</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel sem at magna fermentum bibendum.</p> <a
+        href="#" class="btn">Read More</a>
+    </article>
+    <article class="post"> <img 
+      src="{% static 'images/django-img.jpg' %}"
+      alt="django"
+     
+      />
+      <h3>Second Blog Post</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.</p> <a href="#"
+        class="btn">Read More</a>
+    </article>
+    <article class="post"> <img 
+      src="{% static 'images/django-img.jpg' %}"
+      alt="django"
+      
+      />
+      <h3>Third Blog Post</h3>
+      <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam.</p> <a href="#"
+        class="btn">Read More</a>
+    </article>
+  </main> <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 My Blog. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

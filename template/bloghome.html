@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bloghome.css' %}" />
+
+    <title>Django</title>
+</head>
+
+<body> <!-- Header -->
+    <header class="site-header">
+        <h1 class="logo">My Blog</h1>
+        <nav> <a href="bloghome.html" class="active">Home</a> <a href="about.html">About</a> <a
+                href="blog.html">Blog</a>
+        </nav>
+    </header> <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to My Blog</h2>
+            <p>Discover stories, tips, and insights crafted with passion and creativity.</p> <a href="blog.html"
+                class="btn">Explore Blog</a>
+        </div>
+    </section> <!-- Featured Posts -->
+    <section class="featured">
+        <h2>Featured Articles</h2>
+        <div class="cards">
+            <article class="card"> <img src="{% static 'images/django-img.jpg' %}" alt="Post image">
+                <h3>How to Stay Creative</h3>
+                <p>Learn techniques to keep your creativity flowing every day.</p> <a href="htsc.html"
+                    class="btn-small">Read
+                    More</a>
+            </article>
+            <article class="card"> <img src="{% static 'images/django-img.jpg' %}" alt="Post image">
+                <h3>Top 10 Productivity Hacks</h3>
+                <p>Boost your efficiency with these proven strategies.</p> <a href="#" class="btn-small">Read More</a>
+            </article>
+            <article class="card"> <img src="{% static 'images/django-img.jpg' %}" alt="Post image">
+                <h3>Travel Diaries</h3>
+                <p>Explore breathtaking destinations and travel tips from our journeys.</p> <a href="#"
+                    class="btn-small">Read More</a>
+            </article>
+        </div>
+    </section>
+
+    <section class="table-wrap" aria-labelledby="employee-table-title">
+        
+        <table class="data-table">
+            <caption>Employee details</caption>
+            <thead>
+                <tr>
+
+                    <th scope="col">S.N.</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in employee %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <!-- <td>{{i.id}}</td> -->
+                    <td>{{i.first_name}}</td>
+                    <td>{{i.last_name}}</td>
+                    <td>{{i.designation}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.phone}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Join Our Newsletter</h2>
+        <p>Get the latest posts delivered straight to your inbox.</p>
+        <form> <input type="email" placeholder="Enter your email" required> <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2025 My Blog. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
